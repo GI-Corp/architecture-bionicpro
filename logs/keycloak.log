@@ -1,0 +1,311 @@
+islom@Isloms-MacBook-Pro architecture-bionicpro % TOKEN=$(curl -s \
+  -d "client_id=admin-cli" \
+  -d "username=admin" \
+  -d "password=admin" \
+  -d "grant_type=password" \
+  http://localhost:8080/realms/master/protocol/openid-connect/token | grep -o '"access_token":"[^"]*"' | cut -d':' -f2 | tr -d '"')
+
+islom@Isloms-MacBook-Pro architecture-bionicpro % curl -s -H "Authorization: Bearer $TOKEN" \
+  http://localhost:8080/admin/realms
+
+[
+    {
+        "id": "a2b81d80-c74d-4efa-b94f-433c10c6cdc9",
+        "realm": "master",
+        "displayName": "Keycloak",
+        "displayNameHtml": "<div class=\"kc-logo-text\"><span>Keycloak</span></div>",
+        "notBefore": 0,
+        "defaultSignatureAlgorithm": "RS256",
+        "revokeRefreshToken": false,
+        "refreshTokenMaxReuse": 0,
+        "accessTokenLifespan": 60,
+        "accessTokenLifespanForImplicitFlow": 900,
+        "ssoSessionIdleTimeout": 1800,
+        "ssoSessionMaxLifespan": 36000,
+        "ssoSessionIdleTimeoutRememberMe": 0,
+        "ssoSessionMaxLifespanRememberMe": 0,
+        "offlineSessionIdleTimeout": 2592000,
+        "offlineSessionMaxLifespanEnabled": false,
+        "offlineSessionMaxLifespan": 5184000,
+        "clientSessionIdleTimeout": 0,
+        "clientSessionMaxLifespan": 0,
+        "clientOfflineSessionIdleTimeout": 0,
+        "clientOfflineSessionMaxLifespan": 0,
+        "accessCodeLifespan": 60,
+        "accessCodeLifespanUserAction": 300,
+        "accessCodeLifespanLogin": 1800,
+        "actionTokenGeneratedByAdminLifespan": 43200,
+        "actionTokenGeneratedByUserLifespan": 300,
+        "oauth2DeviceCodeLifespan": 600,
+        "oauth2DevicePollingInterval": 5,
+        "enabled": true,
+        "sslRequired": "external",
+        "registrationAllowed": false,
+        "registrationEmailAsUsername": false,
+        "rememberMe": false,
+        "verifyEmail": false,
+        "loginWithEmailAllowed": true,
+        "duplicateEmailsAllowed": false,
+        "resetPasswordAllowed": false,
+        "editUsernameAllowed": false,
+        "bruteForceProtected": false,
+        "permanentLockout": false,
+        "maxFailureWaitSeconds": 900,
+        "minimumQuickLoginWaitSeconds": 60,
+        "waitIncrementSeconds": 60,
+        "quickLoginCheckMilliSeconds": 1000,
+        "maxDeltaTimeSeconds": 43200,
+        "failureFactor": 30,
+        "defaultRole": {
+            "id": "83cacace-d3b5-4948-bf76-a76b4f64c623",
+            "name": "default-roles-master",
+            "description": "${role_default-roles}",
+            "composite": true,
+            "clientRole": false,
+            "containerId": "a2b81d80-c74d-4efa-b94f-433c10c6cdc9"
+        },
+        "requiredCredentials": [
+            "password"
+        ],
+        "otpPolicyType": "totp",
+        "otpPolicyAlgorithm": "HmacSHA1",
+        "otpPolicyInitialCounter": 0,
+        "otpPolicyDigits": 6,
+        "otpPolicyLookAheadWindow": 1,
+        "otpPolicyPeriod": 30,
+        "otpPolicyCodeReusable": false,
+        "otpSupportedApplications": [
+            "totpAppMicrosoftAuthenticatorName",
+            "totpAppGoogleName",
+            "totpAppFreeOTPName"
+        ],
+        "webAuthnPolicyRpEntityName": "keycloak",
+        "webAuthnPolicySignatureAlgorithms": [
+            "ES256"
+        ],
+        "webAuthnPolicyRpId": "",
+        "webAuthnPolicyAttestationConveyancePreference": "not specified",
+        "webAuthnPolicyAuthenticatorAttachment": "not specified",
+        "webAuthnPolicyRequireResidentKey": "not specified",
+        "webAuthnPolicyUserVerificationRequirement": "not specified",
+        "webAuthnPolicyCreateTimeout": 0,
+        "webAuthnPolicyAvoidSameAuthenticatorRegister": false,
+        "webAuthnPolicyAcceptableAaguids": [],
+        "webAuthnPolicyPasswordlessRpEntityName": "keycloak",
+        "webAuthnPolicyPasswordlessSignatureAlgorithms": [
+            "ES256"
+        ],
+        "webAuthnPolicyPasswordlessRpId": "",
+        "webAuthnPolicyPasswordlessAttestationConveyancePreference": "not specified",
+        "webAuthnPolicyPasswordlessAuthenticatorAttachment": "not specified",
+        "webAuthnPolicyPasswordlessRequireResidentKey": "not specified",
+        "webAuthnPolicyPasswordlessUserVerificationRequirement": "not specified",
+        "webAuthnPolicyPasswordlessCreateTimeout": 0,
+        "webAuthnPolicyPasswordlessAvoidSameAuthenticatorRegister": false,
+        "webAuthnPolicyPasswordlessAcceptableAaguids": [],
+        "browserSecurityHeaders": {
+            "contentSecurityPolicyReportOnly": "",
+            "xContentTypeOptions": "nosniff",
+            "xRobotsTag": "none",
+            "xFrameOptions": "SAMEORIGIN",
+            "xXSSProtection": "1; mode=block",
+            "contentSecurityPolicy": "frame-src 'self'; frame-ancestors 'self'; object-src 'none';",
+            "strictTransportSecurity": "max-age=31536000; includeSubDomains"
+        },
+        "smtpServer": {},
+        "eventsEnabled": false,
+        "eventsListeners": [
+            "jboss-logging"
+        ],
+        "enabledEventTypes": [],
+        "adminEventsEnabled": false,
+        "adminEventsDetailsEnabled": false,
+        "identityProviders": [],
+        "identityProviderMappers": [],
+        "internationalizationEnabled": false,
+        "supportedLocales": [],
+        "browserFlow": "browser",
+        "registrationFlow": "registration",
+        "directGrantFlow": "direct grant",
+        "resetCredentialsFlow": "reset credentials",
+        "clientAuthenticationFlow": "clients",
+        "dockerAuthenticationFlow": "docker auth",
+        "attributes": {
+            "cibaBackchannelTokenDeliveryMode": "poll",
+            "cibaExpiresIn": "120",
+            "cibaAuthRequestedUserHint": "login_hint",
+            "parRequestUriLifespan": "60",
+            "cibaInterval": "5",
+            "realmReusableOtpCode": "false"
+        },
+        "userManagedAccessAllowed": false,
+        "clientProfiles": {
+            "profiles": []
+        },
+        "clientPolicies": {
+            "policies": []
+        }
+    },
+    {
+        "id": "751b476d-a313-4900-8083-1f22a7e8eb64",
+        "realm": "reports-realm",
+        "notBefore": 0,
+        "defaultSignatureAlgorithm": "RS256",
+        "revokeRefreshToken": false,
+        "refreshTokenMaxReuse": 0,
+        "accessTokenLifespan": 300,
+        "accessTokenLifespanForImplicitFlow": 900,
+        "ssoSessionIdleTimeout": 1800,
+        "ssoSessionMaxLifespan": 36000,
+        "ssoSessionIdleTimeoutRememberMe": 0,
+        "ssoSessionMaxLifespanRememberMe": 0,
+        "offlineSessionIdleTimeout": 2592000,
+        "offlineSessionMaxLifespanEnabled": false,
+        "offlineSessionMaxLifespan": 5184000,
+        "clientSessionIdleTimeout": 0,
+        "clientSessionMaxLifespan": 0,
+        "clientOfflineSessionIdleTimeout": 0,
+        "clientOfflineSessionMaxLifespan": 0,
+        "accessCodeLifespan": 60,
+        "accessCodeLifespanUserAction": 300,
+        "accessCodeLifespanLogin": 1800,
+        "actionTokenGeneratedByAdminLifespan": 43200,
+        "actionTokenGeneratedByUserLifespan": 300,
+        "oauth2DeviceCodeLifespan": 600,
+        "oauth2DevicePollingInterval": 5,
+        "enabled": true,
+        "sslRequired": "external",
+        "registrationAllowed": false,
+        "registrationEmailAsUsername": false,
+        "rememberMe": false,
+        "verifyEmail": false,
+        "loginWithEmailAllowed": true,
+        "duplicateEmailsAllowed": false,
+        "resetPasswordAllowed": false,
+        "editUsernameAllowed": false,
+        "bruteForceProtected": false,
+        "permanentLockout": false,
+        "maxFailureWaitSeconds": 900,
+        "minimumQuickLoginWaitSeconds": 60,
+        "waitIncrementSeconds": 60,
+        "quickLoginCheckMilliSeconds": 1000,
+        "maxDeltaTimeSeconds": 43200,
+        "failureFactor": 30,
+        "defaultRole": {
+            "id": "0d5e34d7-ac57-4af9-b02d-add211212dd0",
+            "name": "default-roles-reports-realm",
+            "description": "${role_default-roles}",
+            "composite": true,
+            "clientRole": false,
+            "containerId": "751b476d-a313-4900-8083-1f22a7e8eb64"
+        },
+        "requiredCredentials": [
+            "password"
+        ],
+        "otpPolicyType": "totp",
+        "otpPolicyAlgorithm": "HmacSHA1",
+        "otpPolicyInitialCounter": 0,
+        "otpPolicyDigits": 6,
+        "otpPolicyLookAheadWindow": 1,
+        "otpPolicyPeriod": 30,
+        "otpPolicyCodeReusable": false,
+        "otpSupportedApplications": [
+            "totpAppMicrosoftAuthenticatorName",
+            "totpAppGoogleName",
+            "totpAppFreeOTPName"
+        ],
+        "webAuthnPolicyRpEntityName": "keycloak",
+        "webAuthnPolicySignatureAlgorithms": [
+            "ES256"
+        ],
+        "webAuthnPolicyRpId": "",
+        "webAuthnPolicyAttestationConveyancePreference": "not specified",
+        "webAuthnPolicyAuthenticatorAttachment": "not specified",
+        "webAuthnPolicyRequireResidentKey": "not specified",
+        "webAuthnPolicyUserVerificationRequirement": "not specified",
+        "webAuthnPolicyCreateTimeout": 0,
+        "webAuthnPolicyAvoidSameAuthenticatorRegister": false,
+        "webAuthnPolicyAcceptableAaguids": [],
+        "webAuthnPolicyPasswordlessRpEntityName": "keycloak",
+        "webAuthnPolicyPasswordlessSignatureAlgorithms": [
+            "ES256"
+        ],
+        "webAuthnPolicyPasswordlessRpId": "",
+        "webAuthnPolicyPasswordlessAttestationConveyancePreference": "not specified",
+        "webAuthnPolicyPasswordlessAuthenticatorAttachment": "not specified",
+        "webAuthnPolicyPasswordlessRequireResidentKey": "not specified",
+        "webAuthnPolicyPasswordlessUserVerificationRequirement": "not specified",
+        "webAuthnPolicyPasswordlessCreateTimeout": 0,
+        "webAuthnPolicyPasswordlessAvoidSameAuthenticatorRegister": false,
+        "webAuthnPolicyPasswordlessAcceptableAaguids": [],
+        "browserSecurityHeaders": {
+            "contentSecurityPolicyReportOnly": "",
+            "xContentTypeOptions": "nosniff",
+            "xRobotsTag": "none",
+            "xFrameOptions": "SAMEORIGIN",
+            "contentSecurityPolicy": "frame-src 'self'; frame-ancestors 'self'; object-src 'none';",
+            "xXSSProtection": "1; mode=block",
+            "strictTransportSecurity": "max-age=31536000; includeSubDomains"
+        },
+        "smtpServer": {},
+        "eventsEnabled": false,
+        "eventsListeners": [
+            "jboss-logging"
+        ],
+        "enabledEventTypes": [],
+        "adminEventsEnabled": false,
+        "adminEventsDetailsEnabled": false,
+        "identityProviders": [],
+        "identityProviderMappers": [],
+        "internationalizationEnabled": false,
+        "supportedLocales": [],
+        "browserFlow": "browser",
+        "registrationFlow": "registration",
+        "directGrantFlow": "direct grant",
+        "resetCredentialsFlow": "reset credentials",
+        "clientAuthenticationFlow": "clients",
+        "dockerAuthenticationFlow": "docker auth",
+        "attributes": {
+            "cibaBackchannelTokenDeliveryMode": "poll",
+            "cibaExpiresIn": "120",
+            "cibaAuthRequestedUserHint": "login_hint",
+            "oauth2DeviceCodeLifespan": "600",
+            "oauth2DevicePollingInterval": "5",
+            "parRequestUriLifespan": "60",
+            "cibaInterval": "5",
+            "realmReusableOtpCode": "false"
+        },
+        "userManagedAccessAllowed": false,
+        "clientProfiles": {
+            "profiles": []
+        },
+        "clientPolicies": {
+            "policies": []
+        }
+    }
+]
+
+islom@Isloms-MacBook-Pro architecture-bionicpro % docker-compose logs -f keycloak
+WARN[0000] /Users/islom/Desktop/architecture-bionicpro/docker-compose.yaml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion 
+keycloak-1  | Updating the configuration and installing your custom providers, if any. Please wait.
+keycloak-1  | 2025-06-06 16:37:28,354 INFO  [io.quarkus.deployment.QuarkusAugmentor] (main) Quarkus augmentation completed in 2072ms
+keycloak-1  | 2025-06-06 16:37:28,799 INFO  [org.keycloak.quarkus.runtime.hostname.DefaultHostnameProvider] (main) Hostname settings: Base URL: <unset>, Hostname: <request>, Strict HTTPS: false, Path: <request>, Strict BackChannel: false, Admin URL: <unset>, Admin: <request>, Port: -1, Proxied: false
+keycloak-1  | 2025-06-06 16:37:29,192 WARN  [io.quarkus.agroal.runtime.DataSources] (main) Datasource <default> enables XA but transaction recovery is not enabled. Please enable transaction recovery by setting quarkus.transaction-manager.enable-recovery=true, otherwise data may be lost if the application is terminated abruptly
+keycloak-1  | 2025-06-06 16:37:29,408 INFO  [org.infinispan.SERVER] (keycloak-cache-init) ISPN005054: Native IOUring transport not available, using NIO instead: io.netty.incubator.channel.uring.IOUring
+keycloak-1  | 2025-06-06 16:37:29,447 WARN  [org.infinispan.CONFIG] (keycloak-cache-init) ISPN000569: Unable to persist Infinispan internal caches as no global state enabled
+keycloak-1  | 2025-06-06 16:37:29,461 WARN  [org.infinispan.PERSISTENCE] (keycloak-cache-init) ISPN000554: jboss-marshalling is deprecated and planned for removal
+keycloak-1  | 2025-06-06 16:37:29,468 INFO  [org.infinispan.CONTAINER] (keycloak-cache-init) ISPN000556: Starting user marshaller 'org.infinispan.jboss.marshalling.core.JBossUserMarshaller'
+keycloak-1  | 2025-06-06 16:37:29,692 INFO  [org.keycloak.connections.infinispan.DefaultInfinispanConnectionProviderFactory] (main) Node name: node_288911, Site name: null
+keycloak-1  | 2025-06-06 16:37:29,696 INFO  [org.keycloak.broker.provider.AbstractIdentityProviderMapper] (main) Registering class org.keycloak.broker.provider.mappersync.ConfigSyncEventListener
+keycloak-1  | 2025-06-06 16:37:30,087 INFO  [org.keycloak.quarkus.runtime.storage.legacy.liquibase.QuarkusJpaUpdaterProvider] (main) Initializing database schema. Using changelog META-INF/jpa-changelog-master.xml
+keycloak-1  | 2025-06-06 16:37:30,868 INFO  [org.keycloak.services] (main) KC-SERVICES0050: Initializing master realm
+keycloak-1  | 2025-06-06 16:37:31,577 INFO  [org.keycloak.exportimport.singlefile.SingleFileImportProvider] (main) Full importing from file /opt/keycloak/bin/../data/import/realm-export.json
+keycloak-1  | 2025-06-06 16:37:32,186 INFO  [org.keycloak.exportimport.util.ImportUtils] (main) Realm 'reports-realm' imported
+keycloak-1  | 2025-06-06 16:37:32,207 INFO  [org.keycloak.exportimport.dir.DirImportProvider] (main) Importing from directory /opt/keycloak/bin/../data/import
+keycloak-1  | 2025-06-06 16:37:32,207 INFO  [org.keycloak.services] (main) KC-SERVICES0030: Full model import requested. Strategy: IGNORE_EXISTING
+keycloak-1  | 2025-06-06 16:37:32,207 INFO  [org.keycloak.services] (main) KC-SERVICES0032: Import finished successfully
+keycloak-1  | 2025-06-06 16:37:32,250 INFO  [io.quarkus] (main) Keycloak 21.1.2 on JVM (powered by Quarkus 2.13.8.Final) started in 3.851s. Listening on: http://0.0.0.0:8080
+keycloak-1  | 2025-06-06 16:37:32,250 INFO  [io.quarkus] (main) Profile dev activated. 
+keycloak-1  | 2025-06-06 16:37:32,250 INFO  [io.quarkus] (main) Installed features: [agroal, cdi, hibernate-orm, jdbc-h2, jdbc-mariadb, jdbc-mssql, jdbc-mysql, jdbc-oracle, jdbc-postgresql, keycloak, logging-gelf, micrometer, narayana-jta, reactive-routes, resteasy, resteasy-jackson, smallrye-context-propagation, smallrye-health, vertx]
+keycloak-1  | 2025-06-06 16:37:32,271 INFO  [org.keycloak.services] (main) KC-SERVICES0009: Added user 'admin' to realm 'master'
+keycloak-1  | 2025-06-06 16:37:32,272 WARN  [org.keycloak.quarkus.runtime.KeycloakMain] (main) Running the server in development mode. DO NOT use this configuration in production.
