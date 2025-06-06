@@ -1,0 +1,119 @@
+islom@Isloms-MacBook-Pro architecture-bionicpro % docker-compose up -d --build
+WARN[0000] /Users/islom/Desktop/architecture-bionicpro/docker-compose.yaml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion 
+[+] Running 20/20
+ ✔ keycloak Pulled                                                                                                                                             72.4s 
+   ✔ 5c3f8435842b Pull complete                                                                                                                                22.8s 
+   ✔ 8aec5a20d48e Pull complete                                                                                                                                40.3s 
+   ✔ a8188fb2335f Pull complete                                                                                                                                66.7s 
+   ✔ acd8fa6eddeb Pull complete                                                                                                                                66.7s 
+ ✔ keycloak_db Pulled                                                                                                                                          35.8s 
+   ✔ b16f1b166780 Pull complete                                                                                                                                 7.9s 
+   ✔ 00668167bf36 Pull complete                                                                                                                                 7.9s 
+   ✔ df734c93257b Pull complete                                                                                                                                 8.0s 
+   ✔ 0fb10b4d1840 Pull complete                                                                                                                                 8.0s 
+   ✔ 672b4960c737 Pull complete                                                                                                                                 8.2s 
+   ✔ 40458a09dd0a Pull complete                                                                                                                                 8.3s 
+   ✔ 510e0bc6d455 Pull complete                                                                                                                                 8.3s 
+   ✔ 98943dfcad11 Pull complete                                                                                                                                 8.3s 
+   ✔ 6e9bf94f5ca3 Pull complete                                                                                                                                30.4s 
+   ✔ ac3cd20418e9 Pull complete                                                                                                                                30.4s 
+   ✔ c2dc9b3a2d16 Pull complete                                                                                                                                30.4s 
+   ✔ 351805b984e8 Pull complete                                                                                                                                30.4s 
+   ✔ 60eff62f9eba Pull complete                                                                                                                                30.4s 
+   ✔ 85a02dba5d43 Pull complete                                                                                                                                30.4s 
+Compose now can delegate build to bake for better performances
+Just set COMPOSE_BAKE=true
+[+] Building 40.1s (30/30) FINISHED                                                                                                             docker:desktop-linux
+ => [backend internal] load build definition from Dockerfile                                                                                                    0.0s
+ => => transferring dockerfile: 241B                                                                                                                            0.0s
+ => [frontend internal] load build definition from Dockerfile                                                                                                   0.0s
+ => => transferring dockerfile: 534B                                                                                                                            0.0s
+ => WARN: FromAsCasing: 'as' and 'FROM' keywords' casing do not match (line 2)                                                                                  0.0s
+ => [backend internal] load metadata for docker.io/library/python:3.11-slim                                                                                     2.6s
+ => [frontend internal] load metadata for docker.io/library/nginx:alpine                                                                                        2.6s
+ => [frontend internal] load metadata for docker.io/library/node:16-alpine                                                                                      2.6s
+ => [backend auth] library/python:pull token for registry-1.docker.io                                                                                           0.0s
+ => [frontend auth] library/nginx:pull token for registry-1.docker.io                                                                                           0.0s
+ => [frontend auth] library/node:pull token for registry-1.docker.io                                                                                            0.0s
+ => [frontend internal] load .dockerignore                                                                                                                      0.0s
+ => => transferring context: 2B                                                                                                                                 0.0s
+ => [backend internal] load .dockerignore                                                                                                                       0.0s
+ => => transferring context: 2B                                                                                                                                 0.0s
+ => [frontend build 1/6] FROM docker.io/library/node:16-alpine@sha256:a1f9d027912b58a7c75be7716c97cfbc6d3099f3a97ed84aa490be9dee20e787                         11.7s
+ => => resolve docker.io/library/node:16-alpine@sha256:a1f9d027912b58a7c75be7716c97cfbc6d3099f3a97ed84aa490be9dee20e787                                         0.0s
+ => => sha256:a1f9d027912b58a7c75be7716c97cfbc6d3099f3a97ed84aa490be9dee20e787 1.43kB / 1.43kB                                                                  0.0s
+ => => sha256:389082e6fa6f0d442e6d934dd8531350373e4b1a9be364949fc84ff7c62186af 1.16kB / 1.16kB                                                                  0.0s
+ => => sha256:d56236570077f3147f86e01c7b7d1137505d2872e6b654d76f5f6be52dd5daac 6.75kB / 6.75kB                                                                  0.0s
+ => => sha256:9fda8d8052c61740409c4bea888859c141fd8cc3f58ac61943144ff6d1681b2d 3.33MB / 3.33MB                                                                  5.0s
+ => => sha256:ec2c8699950ec39d29e23b3e0880c1ceb06f9f62a698385f880207e6f600df29 36.45MB / 36.45MB                                                               10.8s
+ => => extracting sha256:9fda8d8052c61740409c4bea888859c141fd8cc3f58ac61943144ff6d1681b2d                                                                       0.0s
+ => => sha256:9d78f986cf6a87dbf98f64d646b5cfe3df77e1ce63b3097dd49a2ce2ac83d092 2.34MB / 2.34MB                                                                  7.5s
+ => => sha256:6574fa54520867ff3b1634aa74c4749441c37892c2ee032cf292b798e4ee6770 448B / 448B                                                                      7.9s
+ => => extracting sha256:ec2c8699950ec39d29e23b3e0880c1ceb06f9f62a698385f880207e6f600df29                                                                       0.7s
+ => => extracting sha256:9d78f986cf6a87dbf98f64d646b5cfe3df77e1ce63b3097dd49a2ce2ac83d092                                                                       0.0s
+ => => extracting sha256:6574fa54520867ff3b1634aa74c4749441c37892c2ee032cf292b798e4ee6770                                                                       0.0s
+ => [frontend internal] load build context                                                                                                                      0.0s
+ => => transferring context: 726.00kB                                                                                                                           0.0s
+ => [frontend stage-1 1/3] FROM docker.io/library/nginx:alpine@sha256:65645c7bb6a0661892a8b03b89d0743208a18dd2f3f17a54ef4b76fb8e2f2a10                          6.7s
+ => => resolve docker.io/library/nginx:alpine@sha256:65645c7bb6a0661892a8b03b89d0743208a18dd2f3f17a54ef4b76fb8e2f2a10                                           0.0s
+ => => sha256:63ffc0d1f14e4082b832c6a42e606e9a0384a526f16ddd720af7c1f018f2f7c4 2.50kB / 2.50kB                                                                  0.0s
+ => => sha256:96868d9fa38f469a86d2f25787e43ee9ad330339d30be260aa9f5a338bb03751 10.80kB / 10.80kB                                                                0.0s
+ => => sha256:c60e446e49a0b607fd79968afdc54cedce67644990a3930925add6caf577779d 1.79MB / 1.79MB                                                                  1.7s
+ => => sha256:65645c7bb6a0661892a8b03b89d0743208a18dd2f3f17a54ef4b76fb8e2f2a10 10.33kB / 10.33kB                                                                0.0s
+ => => sha256:6e771e15690e2fabf2332d3a3b744495411d6e0b00b2aea64419b58b0066cf81 3.99MB / 3.99MB                                                                  1.4s
+ => => sha256:e6557c42ebeaea010d8a8883fdacdc5a17dea1221416d0d980e206dd42dc7e29 627B / 627B                                                                      0.3s
+ => => sha256:d3282d7e6b7633cf153dce0ca1c72b6ea574edb0b34351f848fb16b7d13c851f 957B / 957B                                                                      1.2s
+ => => sha256:a4ce1202d74643d4e4ce15787afc2402a18802e3d7bfd0f6bf60c912b57eec1f 405B / 405B                                                                      1.5s
+ => => extracting sha256:6e771e15690e2fabf2332d3a3b744495411d6e0b00b2aea64419b58b0066cf81                                                                       0.1s
+ => => sha256:1ab010a063387e697fc32bb43022532c0e275d2e51fb65c2ac541e082e610a33 1.21kB / 1.21kB                                                                  1.7s
+ => => sha256:37aca2470cdaf48d251d9308c09dc8735b45ebcbefada46537c9989991b3fe6d 1.40kB / 1.40kB                                                                  1.8s
+ => => extracting sha256:c60e446e49a0b607fd79968afdc54cedce67644990a3930925add6caf577779d                                                                       0.0s
+ => => sha256:9994ea1088e3f1d0eb3dea855f32e7e63742b2644c8611c124ba81bc3453047e 16.03MB / 16.03MB                                                                6.4s
+ => => extracting sha256:e6557c42ebeaea010d8a8883fdacdc5a17dea1221416d0d980e206dd42dc7e29                                                                       0.0s
+ => => extracting sha256:d3282d7e6b7633cf153dce0ca1c72b6ea574edb0b34351f848fb16b7d13c851f                                                                       0.0s
+ => => extracting sha256:a4ce1202d74643d4e4ce15787afc2402a18802e3d7bfd0f6bf60c912b57eec1f                                                                       0.0s
+ => => extracting sha256:1ab010a063387e697fc32bb43022532c0e275d2e51fb65c2ac541e082e610a33                                                                       0.0s
+ => => extracting sha256:37aca2470cdaf48d251d9308c09dc8735b45ebcbefada46537c9989991b3fe6d                                                                       0.0s
+ => => extracting sha256:9994ea1088e3f1d0eb3dea855f32e7e63742b2644c8611c124ba81bc3453047e                                                                       0.2s
+ => [backend 1/5] FROM docker.io/library/python:3.11-slim@sha256:7a3ed1226224bcc1fe5443262363d42f48cf832a540c1836ba8ccbeaadf8637c                              13.5s
+ => => resolve docker.io/library/python:3.11-slim@sha256:7a3ed1226224bcc1fe5443262363d42f48cf832a540c1836ba8ccbeaadf8637c                                       0.0s
+ => => sha256:36c9a3218f97d0e67e428aca798d57b63c82aaf59f26976c30c5a210b98ccf5a 1.75kB / 1.75kB                                                                  0.0s
+ => => sha256:0bb1e8599e25a72bd29704a55d8c6d64c8d7bd18e8647f063afd248e4fd504d0 5.39kB / 5.39kB                                                                  0.0s
+ => => sha256:7a3ed1226224bcc1fe5443262363d42f48cf832a540c1836ba8ccbeaadf8637c 9.13kB / 9.13kB                                                                  0.0s
+ => => sha256:7840cd825272881c40e91120a55b4d26f7e5829aa530409b56fbc4831b2f944c 3.33MB / 3.33MB                                                                 10.4s
+ => => sha256:40a9c8db52542fcb593972a6a77ee59a33b0537fd77745d2d19603dfd56585af 16.14MB / 16.14MB                                                               13.0s
+ => => extracting sha256:7840cd825272881c40e91120a55b4d26f7e5829aa530409b56fbc4831b2f944c                                                                       0.1s
+ => => sha256:ed8f18310f179c44ab814c96f3edd5c55622659ecec9446cd9c3c248bb74bc8e 249B / 249B                                                                     11.6s
+ => => extracting sha256:40a9c8db52542fcb593972a6a77ee59a33b0537fd77745d2d19603dfd56585af                                                                       0.5s
+ => => extracting sha256:ed8f18310f179c44ab814c96f3edd5c55622659ecec9446cd9c3c248bb74bc8e                                                                       0.0s
+ => [backend internal] load build context                                                                                                                       0.0s
+ => => transferring context: 2.51kB                                                                                                                             0.0s
+ => [frontend build 2/6] WORKDIR /app                                                                                                                           0.1s
+ => [frontend build 3/6] COPY package.json package-lock.json ./                                                                                                 0.0s
+ => [frontend build 4/6] RUN npm ci                                                                                                                            17.2s
+ => [backend 2/5] WORKDIR /app                                                                                                                                  0.0s
+ => [backend 3/5] COPY requirements.txt .                                                                                                                       0.0s
+ => [backend 4/5] RUN pip install --no-cache-dir -r requirements.txt                                                                                           23.6s
+ => [frontend build 5/6] COPY . .                                                                                                                               0.0s
+ => [frontend build 6/6] RUN npm run build                                                                                                                      3.8s
+ => [frontend stage-1 2/3] COPY --from=build /app/build /usr/share/nginx/html                                                                                   0.0s
+ => [frontend stage-1 3/3] COPY nginx.conf /etc/nginx/conf.d/default.conf                                                                                       0.0s
+ => [frontend] exporting to image                                                                                                                               0.0s
+ => => exporting layers                                                                                                                                         0.0s
+ => => writing image sha256:1b52f245aae92781e5278f2fb00a8f5d57aa0058c632928276e0d1912d8f85d8                                                                    0.0s
+ => => naming to docker.io/library/architecture-bionicpro-frontend                                                                                              0.0s
+ => [frontend] resolving provenance for metadata file                                                                                                           0.0s
+ => [backend 5/5] COPY . .                                                                                                                                      0.0s
+ => [backend] exporting to image                                                                                                                                0.2s
+ => => exporting layers                                                                                                                                         0.2s
+ => => writing image sha256:7596ee0539146cfdb4c2fd9bf4ca121c10c14740da656bb37064256a9043d3f4                                                                    0.0s
+ => => naming to docker.io/library/architecture-bionicpro-backend                                                                                               0.0s
+ => [backend] resolving provenance for metadata file                                                                                                            0.0s
+[+] Running 7/7
+ ✔ backend                                         Built                                                                                                        0.0s 
+ ✔ frontend                                        Built                                                                                                        0.0s 
+ ✔ Network architecture-bionicpro_default          Created                                                                                                      0.0s 
+ ✔ Container architecture-bionicpro-frontend-1     Started                                                                                                      0.1s 
+ ✔ Container architecture-bionicpro-keycloak_db-1  Started                                                                                                      0.2s 
+ ✔ Container architecture-bionicpro-keycloak-1     Started                                                                                                      0.2s 
+ ✔ Container architecture-bionicpro-backend-1      Started                                                                                                      0.2s 
